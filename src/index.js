@@ -15,3 +15,6 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+ app = express()
+    app.use(express.static('reactFolderName/build'));
+    app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'reactFolderName', 'build', 'index.html')));
